@@ -20,6 +20,7 @@ body {
     "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--ink);
+ 
 }
 
 .shell {
@@ -33,6 +34,7 @@ body {
 .hero {
   position: relative;
   min-height: 100vh; /* fill the screen */
+  height: auto;
   color: #ffffff;
   overflow: hidden;
 }
@@ -492,4 +494,30 @@ header {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+/* ===== MOBILE NAV FIX (prevents horizontal cropping) ===== */
+@media (max-width: 720px) {
+  .top-nav {
+    padding: 0.9rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    justify-content: center;
+    width: 100%;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+}
+html, body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }

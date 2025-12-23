@@ -812,3 +812,68 @@ div {
 .main-nav a.active::after {
     width: 100%;
 }
+/* ================================
+   MOBILE + RESPONSIVE FIXES (MENU)
+   Paste at very bottom of CSS
+================================ */
+
+/* Stop horizontal cropping */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Images never overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Better grid that adapts automatically */
+.menu-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* NAV: wrap + reduce spacing on small screens */
+@media (max-width: 768px) {
+  .nav-inner {
+    padding: 0.9rem 1rem;   /* reduce big padding */
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* hero spacing (because header is fixed) */
+  .hero-menu {
+    padding-top: 6.5rem;
+  }
+
+  /* make drink image smaller so it doesn’t push outside screen */
+  .hero-drink-img,
+  .hero-drink img {
+    width: min(280px, 85vw);
+  }
+
+  /* menu header stacks nicely */
+  .menu-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .menu-inner {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero-big {
+    font-size: 2.3rem;
+  }
+}
