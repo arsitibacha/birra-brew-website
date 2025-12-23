@@ -1,0 +1,814 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colors: use same vibe as home but in Pinterest layout */
+:root {
+  --bg: #ffffff;
+  --coffee-dark: #2b221a;
+  --coffee-mid: #6b5746;
+  --muted: #a59a8f;
+  --accent: #c9824c;      /* warm latte accent */
+  --accent-soft: #f2c699;
+  --beige: #f3e6d7;       /* card area */
+  --card-bg: #fdfaf6;
+  --border: #e1d2c0;
+  --promo-pink: #ffd2dd;  /* bottom block like Pinterest */
+}
+
+/* ===== BASE ===== */
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--coffee-dark);
+}
+
+/* ===== NAV ===== */
+
+.nav {
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+}
+
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.logo-word {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.78rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #ffffffb3;
+}
+
+.nav-links a.active-link {
+  color: #ffffff;
+}
+
+/* ===== HERO (ORDER COFFEE) ===== */
+/* ===== HERO (Pinterest style, dark aesthetic) ===== */
+
+.hero-menu {
+  background: #1b1816; /* deep coffee dark */
+  padding: 4rem 0 5rem;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+
+/* ORDER / COFFEE text */
+.hero-big {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.8rem, 4vw, 4.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.hero-big .left {
+  display: block;
+}
+
+.hero-big .right {
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* Welcome cursive */
+.welcome {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #d8cbbb;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* DRINK IMAGE */
+.hero-drink {
+  margin-top: 2.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-drink img {
+  width: 300px;
+  height: auto;
+  z-index: 2;
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.45));
+}
+
+/* Pedestal block under drink */
+.pedestal {
+  width: 260px;
+  height: 22px;
+  background: #12100e;
+  border-radius: 10px;
+  position: absolute;
+  bottom: -10px;
+  z-index: 1;
+  filter: blur(6px);
+}
+
+/* ===== MENU MAIN ===== */
+
+.menu-wrap {
+  background: #ffffff;
+  padding: 2.8rem 0 4rem;
+}
+
+.menu-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.8rem;
+}
+
+/* title row */
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.menu-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.9rem;
+}
+
+.menu-sub {
+  font-style: italic;
+  color: var(--coffee-mid);
+}
+
+.basket-btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.45rem 1.2rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+/* category tabs */
+
+.menu-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.8rem;
+}
+
+.tab {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 0.45rem 1.1rem;
+  background: #f8f2ea;
+  color: var(--coffee-mid);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: var(--coffee-dark);
+  color: #fff;
+  border-color: var(--coffee-dark);
+}
+
+/* grid */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+/* card */
+
+.drink-card {
+  background: #1a1715;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+/* top image area */
+
+.drink-img {
+  background: #fdfbf8;
+  padding: 1rem 0.8rem 0.4rem;
+}
+
+.drink-img img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+/* text */
+
+.drink-info {
+  padding: 0.9rem 1rem 1rem;
+}
+
+.drink-info h3 {
+  font-size: 0.96rem;
+  margin-bottom: 0.2rem;
+}
+
+.drink-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.drink-desc {
+  font-size: 0.8rem;
+  color: var(--coffee-mid);
+  min-height: 2.3em;
+}
+
+/* bottom price / to cart */
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.7rem;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #3d2614;
+}
+
+.add-btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.35rem 0.95rem;
+  background: #fff;
+  color: #a66128;
+  font-size: 0.78rem;
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+/* more button */
+
+.more-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8rem;
+}
+
+.more-btn {
+  border-radius: 999px;
+  padding: 0.45rem 1.4rem;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+/* ===== NEW DRINK BLOCK (bottom pink) ===== */
+
+.new-drink {
+  background: var(--promo-pink);
+  padding: 2.6rem 0 3rem;
+}
+
+.new-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.8rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+.new-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: #a2403e;
+  margin-bottom: 0.4rem;
+}
+
+.new-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.new-copy {
+  font-size: 0.9rem;
+  color: #6b3f35;
+  max-width: 24rem;
+}
+
+.new-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 1.2rem;
+  font-size: 0.8rem;
+}
+
+.new-meta strong {
+  display: block;
+}
+
+.new-meta span {
+  display: block;
+  color: #7c4b41;
+}
+
+.new-price {
+  margin-top: 1.1rem;
+}
+
+.new-price .now {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-right: 0.6rem;
+}
+
+.new-price .old {
+  text-decoration: line-through;
+  color: #8f5e57;
+  font-size: 0.9rem;
+}
+
+.new-image img {
+  width: 100%;
+  max-width: 320px;
+  display: block;
+  margin-left: auto;
+  filter: drop-shadow(0 16px 40px rgba(0, 0, 0, 0.35));
+}
+
+/* ===== FOOTER ===== */
+
+.site-footer {
+  text-align: center;
+  padding: 1.8rem 1.5rem 2rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-inner,
+  .new-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-drink img,
+  .new-image img {
+    margin: 1.4rem auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .drink-img img {
+    height: 210px;
+  }
+}
+/* ===== Pinterest Style Hero (Dark) ===== */
+
+.hero-menu {
+  background: #1a1715; /* Dark coffee background */
+  padding: 6rem 1rem 5rem;
+}
+
+.hero-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* ORDER text */
+.hero-left,
+.hero-right {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+/* CENTER DRINK */
+.hero-center {
+  position: relative;
+}
+
+.hero-drink-img {
+  width: 320px;
+  height: auto;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.45));
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hero-left,
+  .hero-right {
+    font-size: 2.5rem;
+  }
+}
+/* Make navbar match hero background */
+.navbar,
+header,
+nav {
+  background: #1a1715 !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+.navbar a,
+nav a {
+  color: #ffffff !important;
+}
+/* ===== GLOBAL DARK THEME FOR MENU PAGE ===== */
+
+body {
+  background: #1a1715;      /* same as hero */
+  color: #f5eee4;           /* soft off-white text */
+}
+
+/* Make the main menu area blend with hero */
+.menu-section,
+.menu-page,
+main {
+  background: #1a1715;
+}
+/* Header + tabs area */
+.menu-header {
+  background: transparent;
+  color: #f5eee4;
+}
+
+.menu-section-title,
+.menu-section-subtitle {
+  color: #f5eee4;
+}
+
+/* Tabs row */
+.menu-tabs {
+  background: #181312;     /* darker strip instead of light beige */
+  box-shadow: none;
+  border-radius: 999px;
+  padding: 0.5rem;
+}
+/* Individual drink cards */
+.menu-card {
+  background: #221d19;                 /* dark brown card */
+  border: 1px solid #3a3029;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  color: #f5eee4;
+}
+
+/* Image area */
+.menu-card img {
+  background: #1a1715;
+  border-radius: 18px;
+}
+
+/* Name + description + price */
+.menu-card-title {
+  color: #ffffff;
+}
+
+.menu-card-category,
+.menu-card-desc {
+  color: #c8b9aa;
+}
+
+.menu-card-price {
+  color: #f9a048;   /* keep Birra’s orange vibe */
+}
+
+/* "to cart" / "add" button style */
+.menu-card-button {
+  background: #f9a048;
+  color: #1a1715;
+  border-radius: 999px;
+}
+.menu-tab {
+  background: #26201c;
+  color: #f5eee4;
+  border-radius: 999px;
+}
+
+.menu-tab.active {
+  background: #f9a048;
+  color: #1a1715;
+}
+/* =========== FULL DARK MODE FIX =========== */
+
+/* Whole page stays dark */
+body,
+html {
+  background: #1a1715 !important;
+}
+
+/* The big grid background (the beige wrapper) */
+.menu-grid,
+.products-grid,
+.product-list,
+.items-grid {
+  background: #1a1715 !important;
+  border: none !important;
+}
+
+/* Each product card wrapper (the light beige boxes you're seeing) */
+.product-card,
+.menu-item,
+.item-card,
+.card {
+  background: #221d19 !important;
+  border: 1px solid #3a3029 !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+/* The inner container that might still be light */
+.product-card * {
+  background: transparent !important;
+}
+
+/* Titles / descriptions */
+.product-name,
+.product-category,
+.product-description,
+.product-price {
+  color: #f5eee4 !important;
+}
+
+/* Fix any leftover light backgrounds */
+section,
+div {
+  background-color: transparent !important;
+}
+
+/* Make drink image backgrounds dark */
+.product-card img,
+.menu-item img,
+.item-card img,
+.card img {
+    background-color: #1a1715 !important;
+}
+
+/* Also force the image container (wrapper) to be dark */
+.product-card .image,
+.menu-item .image,
+.item-card .image,
+.card .image,
+.grid-item .image-wrapper,
+.product-image,
+.item-image {
+    background-color: #1a1715 !important;
+    border: none !important;
+}
+
+/* Remove any leftover light shadows or borders */
+.product-card img,
+.card img {
+    box-shadow: none !important;
+}
+/* Entire drink card body dark */
+.product-card,
+.menu-item,
+.item-card,
+.card,
+.grid-item {
+    background-color: #1a1715 !important;
+    border: none !important;
+}
+
+/* The inner wrapper that holds title, description, and price */
+.product-card .info,
+.menu-item .info,
+.item-card .info,
+.card .info,
+.grid-item .details,
+.grid-item .content,
+.card-body,
+.item-content {
+    background-color: #1a1715 !important;
+}
+
+/* Fix any lighter layers */
+.product-card *,
+.menu-item *,
+.item-card *,
+.card * {
+    background: none !important;
+    border-color: #333 !important;  /* optional thin border */
+    color: #eee !important; /* text becomes readable */
+}
+
+/* Tag/label backgrounds (like "Cold Coffee", "Hot Coffee") */
+.product-card .tag,
+.menu-item .tag,
+.card .tag {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+/* Make drink images larger */
+.menu-item img,
+.product-card img,
+.card img,
+.grid-item img {
+    width: 100% !important;
+    height: 340px !important;     /* increase this number to make them even bigger */
+    object-fit: cover !important; /* crop nicely */
+    border-radius: 12px !important;
+}
+
+/* Increase card height so the bigger image fits */
+.menu-item,
+.product-card,
+.card,
+.grid-item {
+    min-height: 420px !important; /* increase if needed */
+}
+/* ==== SHARED NAVBAR (same as home) ==== */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.95),
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.0)
+    );
+    backdrop-filter: blur(10px);
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.1rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Cormorant Garamond", "Times New Roman", serif; /* same font as home */
+    color: #f5f2e9;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.brand-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    border: 1px solid #f5f2e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.brand-name {
+    font-size: 1.1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;               /* controls the distance between menu items */
+}
+
+.main-nav a {
+    color: #f5f2e9;
+    text-decoration: none;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    width: 0;
+    height: 1px;
+    background-color: #f5f2e9;
+    transition: width 0.2s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+.main-nav a {
+    text-decoration: none;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    width: 0;
+    height: 1px;
+    background-color: #f5f2e9;
+    transition: width 0.25s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}

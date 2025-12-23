@@ -1,0 +1,952 @@
+/* ========= BASE ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f6f4ef;
+  --bg-alt: #f1efe8;
+  --bg-card: #fbf9f3;
+  --ink: #25211b;
+  --muted: #827a6e;
+  --accent: #c5a56a;
+  --line: rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-tight {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* ========= HEADER / NAV ========= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(246, 244, 239, 0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* birra brew logo */
+.brand-logo {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.brand-word {
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  font-size: 0.9rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  position: relative;
+  padding-bottom: 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--ink);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ========= HERO VIDEO (HOME) ========= */
+.hero-video {
+  background: #000;
+}
+
+.hero-video-inner {
+  position: relative;
+  max-width: 100%;
+  height: min(80vh, 680px);
+  overflow: hidden;
+}
+
+.hero-video-el {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1));
+}
+
+.hero-video-text {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1120px;
+  width: 100%;
+  padding: 0 1.5rem;
+  color: #f6f4ef;
+}
+
+.hero-video-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 3vw + 1rem, 3.2rem);
+}
+
+.hero-video-text .eyebrow {
+  color: #f3dfbb;
+  margin-bottom: 0.3rem;
+}
+
+/* ========= TYPOGRAPHY & BUTTONS ========= */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+
+.eyebrow.small {
+  letter-spacing: 0.16em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+.hero-sub {
+  max-width: 27rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #f3dfbb, var(--accent));
+  color: #26160b;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
+}
+
+.ghost-btn {
+  border-color: rgba(0, 0, 0, 0.14);
+  color: var(--ink);
+}
+
+.ghost-btn:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* ========= HOME INTRO ========= */
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2.4rem;
+}
+
+.intro-grid h2 {
+  font-size: 1.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.intro-grid p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.intro-grid p + p {
+  margin-top: 0.7rem;
+}
+
+.intro-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fact .label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+/* ========= POPULAR DRINKS (HOME) ========= */
+.section-divider {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-alt);
+}
+
+.section-header {
+  margin-bottom: 1.8rem;
+}
+
+.section-header h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.4rem;
+}
+
+.section-header p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.card {
+  border-radius: 1.4rem;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 0.9rem 1.1rem 1.1rem;
+}
+
+.card-body h3 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.card-body p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.center-line {
+  text-align: center;
+  margin-top: 1.7rem;
+}
+
+.text-link {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(197, 165, 106, 0.6);
+  padding-bottom: 0.1rem;
+}
+
+.text-link:hover {
+  border-bottom-color: rgba(197, 165, 106, 1);
+}
+
+/* ========= GENERIC PAGE HERO (other pages) ========= */
+.page-hero {
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--line);
+  padding: 3.2rem 0 2.4rem;
+}
+
+.page-hero-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.page-hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ========= LOCATION PAGE ========= */
+.location-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2.4rem;
+}
+
+.location-grid h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.location-grid p {
+  font-size: 0.95rem;
+}
+
+.location-grid .small {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+.location-hours {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin-top: 1.3rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.location-map .map-placeholder {
+  border-radius: 1.6rem;
+  border: 1px dashed var(--line);
+  background: #fdfaf3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 260px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Beans section */
+.beans-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2.2rem;
+}
+
+.beans-grid h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.beans-grid p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.beans-grid p + p {
+  margin-top: 0.6rem;
+}
+
+.beans-list {
+  list-style: none;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* ========= ABOUT PAGE ========= */
+.about-story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.4rem;
+}
+
+.about-story-grid h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.about-story-grid p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.about-story-grid p + p {
+  margin-top: 0.6rem;
+}
+
+/* Team */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.team-card {
+  border-radius: 1.4rem;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+}
+
+.team-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.team-body {
+  padding: 0.9rem 1.1rem 1.1rem;
+}
+
+.team-body h3 {
+  font-size: 0.98rem;
+  margin-bottom: 0.3rem;
+}
+
+.team-body p {
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+/* ========= CONTACT PAGE ========= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2.2rem;
+  align-items: flex-start;
+}
+
+.contact-info h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.contact-info p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+}
+
+.info-list {
+  list-style: none;
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.info-list li + li {
+  margin-top: 0.3rem;
+}
+
+.small {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.contact-form {
+  border-radius: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 1.6rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  border-radius: 0.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0.6rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: #fffdf7;
+  color: var(--ink);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(130, 122, 110, 0.7);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ========= VIDEO GALLERY PAGE ========= */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.8rem;
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 1.4rem;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
+.video-caption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   MENU PAGE – NEW DESIGN (banner + grid + pink promo)
+   ========================================================= */
+
+/* Top banner with big drink photo */
+.menu-hero {
+  background: #f2e6d7;
+}
+
+.menu-hero-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  padding-top: 1.6rem;
+  padding-bottom: 2.4rem;
+  position: relative;
+}
+
+.menu-hero-img {
+  width: 100%;
+  border-radius: 1.4rem;
+  object-fit: cover;
+  max-height: 420px;
+  display: block;
+}
+
+.menu-hero-overlay {
+  position: absolute;
+  inset: 1.6rem 1.5rem auto 1.5rem;
+  border-radius: 1.4rem;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.33),
+    rgba(0, 0, 0, 0.05)
+  );
+  pointer-events: none;
+}
+
+.menu-hero-text {
+  position: absolute;
+  inset: auto 3rem 3.3rem 3rem;
+  color: #fffdf8;
+  z-index: 2;
+}
+
+.menu-hero-text .hero-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.menu-hero-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 3vw + 1rem, 3rem);
+  text-transform: uppercase;
+}
+
+.menu-hero-text h1 span + span {
+  margin-left: 0.6rem;
+}
+
+.menu-hero-text .hero-subline {
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+/* Drinks section (beige background) */
+.drinks-section {
+  background: #fcf8f2;
+}
+
+.drinks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+
+.drinks-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.7rem;
+}
+
+.drinks-subtitle {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #a66a33;
+  margin-top: 0.1rem;
+}
+
+.basket-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.85rem;
+  background: #c58c60;
+  color: #fffdf8;
+  cursor: pointer;
+}
+
+/* Category pills */
+.drink-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.pill {
+  border-radius: 999px;
+  border: 1px solid #d3bda6;
+  background: #f6ede3;
+  font-size: 0.8rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+
+.pill.active {
+  background: #c58c60;
+  color: #fffdf8;
+  border-color: #c58c60;
+}
+
+/* Drink cards grid */
+.drink-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.drink-card {
+  background: #fffdf8;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.drink-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  background: #f1e0cf;
+}
+
+.drink-body {
+  padding: 0.8rem 0.9rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.drink-body h3 {
+  font-size: 0.96rem;
+}
+
+.drink-desc {
+  font-size: 0.8rem;
+  color: #8a7a68;
+}
+
+.drink-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+
+.drink-price {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.to-cart-btn {
+  border-radius: 999px;
+  border: 1px solid #d3bda6;
+  background: #f7eee5;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.9rem;
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+.drinks-more-wrap {
+  text-align: center;
+  margin-top: 1.4rem;
+}
+
+.more-btn {
+  border-radius: 999px;
+  border: none;
+  background: #c58c60;
+  color: #fffdf8;
+  padding: 0.6rem 1.6rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Pink promo banner */
+.promo-section {
+  background: #ffe0eb;
+  padding: 3rem 0;
+}
+
+.promo-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.promo-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.promo-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: #a54c3b;
+  margin-bottom: 0.2rem;
+}
+
+.promo-desc {
+  font-size: 0.9rem;
+  color: #7b4c4a;
+  max-width: 26rem;
+}
+
+.promo-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+}
+
+.promo-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #9b5653;
+}
+
+.promo-drink {
+  position: relative;
+  text-align: center;
+}
+
+.promo-drink img {
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 1.4rem;
+  object-fit: cover;
+}
+
+.promo-price {
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.promo-price-main {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.promo-price-old {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  color: #a36b69;
+}
+
+/* ========= FOOTER ========= */
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--bg-alt);
+  padding: 1.1rem 0 1.4rem;
+  font-size: 0.8rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--muted);
+}
+
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--ink);
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 960px) {
+  .intro-grid,
+  .cards-grid,
+  .location-grid,
+  .beans-grid,
+  .about-story-grid,
+  .team-grid,
+  .contact-grid,
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .drink-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .promo-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-hero-text {
+    inset: auto 2.4rem 2.6rem 2.4rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-links {
+    gap: 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  .section,
+  .section-tight {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-video-inner {
+    height: 60vh;
+  }
+
+  .page-hero {
+    padding: 2.6rem 0 2rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .drink-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-hero-text {
+    inset: auto 1.8rem 2.2rem 1.8rem;
+  }
+}

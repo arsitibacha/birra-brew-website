@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Website Demo · Menu</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="menu.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR (same structure as home) ===== -->
+ 
+    <header class="nav">
+        <div class="nav-left">
+        <div class="nav-inner">
+        <span class="logo-symbol">
+
+    <svg width="30" height="30" viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg">
+    
+      <ellipse cx="18" cy="16" rx="9" ry="13"
+               transform="rotate(-18 18 16)"
+               fill="none" stroke="white" stroke-width="2.5" />
+      
+      <path d="M14 6c3 4 4.5 8.5 4.5 14"
+            fill="none" stroke="white" stroke-width="2.3"
+            stroke-linecap="round" />
+
+      
+      <ellipse cx="30" cy="16" rx="9" ry="13"
+               transform="rotate(18 30 16)"
+               fill="none" stroke="white" stroke-width="2.5" />
+    
+      <path d="M34 7c-3 4-4.5 8.5-4.5 14"
+            fill="none" stroke="white" stroke-width="2.3"
+            stroke-linecap="round" />
+    </svg>
+  </span>
+        <span class="logo-word">Café Website Demo</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="menu.html" class="active-link">Menu</a>
+        <a href="location.html">Location</a>
+        <a href="contact.html">Contact</a>
+        <a href="gallery.html">Watch Videos</a>
+      </nav>
+    </header>
+
+  <main>
+
+    <!-- ===== HERO SECTION (ORDER COFFEE) ===== -->
+    <section class="hero-menu">
+  <div class="hero-layout">
+
+    <!-- LEFT TEXT -->
+    <h1 class="hero-left">ORDER</h1>
+
+    <!-- CENTER DRINK -->
+    <div class="hero-center">
+      <img src="https://i.pinimg.com/736x/d7/c1/d6/d7c1d6b070887af519cbc56c3fd71018.jpg" alt="Birra Brew Drink" class="hero-drink-img" />
+    </div>
+
+    <!-- RIGHT TEXT -->
+    <h1 class="hero-right">COFFEE</h1>
+
+  </div>
+</section>
+
+  </div>
+</section>
+
+    <!-- ===== MENU SECTION ===== -->
+    <section class="menu-wrap">
+      <div class="menu-inner">
+
+        <!-- Top row: Menu title + basket -->
+        <header class="menu-header">
+          <div>
+            <h2>Menu</h2>
+            <p class="menu-sub">drinks</p>
+          </div>
+          <button class="basket-btn">my basket</button>
+        </header>
+
+        <!-- Category pills (layout only, no JS filter yet) -->
+        <div class="menu-tabs">
+          <button class="tab active">Iced coffee</button>
+          <button class="tab">Milk-Based Coffee</button>
+          <button class="tab">Classic Coffee</button>
+          <button class="tab">Specialty Coffee</button>
+          <button class="tab">Sweet Coffee</button>
+        </div>
+
+        <!-- ===== GRID OF CARDS (Pinterest layout) ===== -->
+        <div class="menu-grid">
+
+          <!-- CARD 1 -->
+          <article class="drink-card">
+            <div class="drink-img">
+              <img src="https://i.pinimg.com/736x/20/4f/8a/204f8ad83b9c91b37cefbbf9e4d7da90.jpg" alt="Pistachio Iced Latte" />
+            </div>
+            <div class="drink-info">
+              <h3>Pistachio Iced Latte</h3>
+              <p class="drink-note">Cold Coffee</p>
+              <p class="drink-desc">
+                Espresso, milk, pistachio cream, ice.
+              </p>
+              <div class="card-bottom">
+                <span class="price">$8.97</span>
+                <button class="add-btn">to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="drink-card">
+            <div class="drink-img">
+              <img src="https://i.pinimg.com/1200x/f0/e4/06/f0e40607f0d594a9c875aa0b1e58d27d.jpg" alt="Iced Matcha Latte" />
+            </div>
+            <div class="drink-info">
+              <h3>Iced Matcha Latte</h3>
+              <p class="drink-note">Cold Coffee</p>
+              <p class="drink-desc">
+                Matcha, milk, a touch of sweetness, served over ice.
+              </p>
+              <div class="card-bottom">
+                <span class="price">$6.77</span>
+                <button class="add-btn">to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="drink-card">
+            <div class="drink-img">
+              <img src="https://i.pinimg.com/736x/5b/18/7d/5b187d86853d48feff548229758594eb.jpg" alt="Iced Spanish Latte" />
+            </div>
+            <div class="drink-info">
+              <h3>Iced Spanish Latte</h3>
+              <p class="drink-note">Cold Coffee</p>
+              <p class="drink-desc">
+                Coffee, condensed milk, cold milk, ice.
+              </p>
+              <div class="card-bottom">
+                <span class="price">$7.67</span>
+                <button class="add-btn">to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 4 -->
+          <article class="drink-card">
+            <div class="drink-img">
+              <img src="https://i.pinimg.com/1200x/1d/21/52/1d215271bb729aa46180e3e3959459b5.jpg" alt="Blue Matcha Latte" />
+            </div>
+            <div class="drink-info">
+              <h3>Blue Matcha Latte</h3>
+              <p class="drink-note">Signature Hot Drinks</p>
+              <p class="drink-desc">
+                Blue matcha, condensed milk, steamed milk.
+              </p>
+              <div class="card-bottom">
+                <span class="price">$7.67</span>
+                <button class="add-btn">to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 5 -->
+          <article class="drink-card">
+            <div class="drink-img">
+              <img src="https://i.pinimg.com/736x/75/9b/0f/759b0fd8bb4bedc2214f7a130987dc35.jpg" alt="Mocaccino S" />
+            </div>
+            <div class="drink-info">
+              <h3>Mocaccino S</h3>
+              <p class="drink-note">Hot Coffee</p>
+              <p class="drink-desc">
+                Coffee, dark chocolate flavor sauce, milk.
+              </p>
+              <div class="card-bottom">
+                <span class="price">$7.67</span>
+                <button class="add-btn">to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 6 -->
+          <article class="drink-card">
+            <div class="drink-img">
+              <img src="https://i.pinimg.com/1200x/78/d0/ac/78d0ac01271b995fd3f27eb709aa0278.jpg" alt="Flat White S" />
+            </div>
+            <div class="drink-info">
+              <h3>Flat White S</h3>
+              <p class="drink-note">Hot Coffee</p>
+              <p class="drink-desc">
+                Black sugar, coffee, milk store, white sugar.
+              </p>
+              <div class="card-bottom">
+                <span class="price">$7.77</span>
+                <button class="add-btn">to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 7 -->
+          <article class="drink-card">
+            <div class="drink-img">
+              <img src="https://i.pinimg.com/1200x/79/4c/ee/794cee81b7ca116b41d966acb79c5ec4.jpg" alt="Americano" />
+            </div>
+            <div class="drink-info">
+              <h3>Americano</h3>
+              <p class="drink-note">Hot Coffee</p>
+              <p class="drink-desc">
+                Espresso topped with hot water.
+              </p>
+              <div class="card-bottom">
+                <span class="price">$7.67</span>
+                <button class="add-btn">to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 8 -->
+          <article class="drink-card">
+            <div class="drink-img">
+              <img src="https://i.pinimg.com/736x/4e/e4/f1/4ee4f18c45f2f431723448c4693dbe82.jpg" alt="Espresso Single" />
+            </div>
+            <div class="drink-info">
+              <h3>Espresso Single</h3>
+              <p class="drink-note">Hot Coffee</p>
+              <p class="drink-desc">
+                Single shot of our house espresso.
+              </p>
+              <div class="card-bottom">
+                <span class="price">$7.64</span>
+                <button class="add-btn">to cart</button>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /menu-grid -->
+
+        <div class="more-row">
+          <button class="more-btn">More</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== NEW DRINK PROMO STRIP (bottom block) ===== -->
+    <section class="new-drink">
+      <div class="new-inner">
+        <div class="new-text">
+          <p class="new-eyebrow">New drink</p>
+          <h2>Iced Latte</h2>
+          <p class="new-copy">
+            A refreshing cold drink made with espresso, cold milk and ice
+            for a smooth, light flavor. Balanced sweetness, never too strong.
+          </p>
+          <div class="new-meta">
+            <div>
+              <strong>3 syrups</strong>
+              <span>vanilla, caramel, hazelnut</span>
+            </div>
+            <div>
+              <strong>With</strong>
+              <span>espresso + cold milk + ice</span>
+            </div>
+            <div>
+              <strong>20% off</strong>
+              <span>limited time</span>
+            </div>
+          </div>
+          <p class="new-price">
+            <span class="now">6.50$</span>
+            <span class="old">7.80$</span>
+          </p>
+        </div>
+
+        <div class="new-image">
+          <!-- Replace with a tall iced latte image -->
+          <img src="https://i.pinimg.com/1200x/84/09/ed/8409ed2358fe7c443e004ce75de02569.jpg" alt="New Iced Latte" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <p>© 2025 Café Website Demo · All rights reserved.</p>
+  </footer>
+<script src="cart.js"></script>
+</body>
+</html>

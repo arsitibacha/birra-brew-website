@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>café Website demo· Where Every Cup Tells a Story</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Home-page CSS only -->
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <!-- Background image; swap this URL for your own hero café photo -->
+    <div class="hero-bg"
+         style="background-image: url('https://i.pinimg.com/1200x/71/6b/7c/716b7c96188294c6cb538368b5779579.jpg');">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <header class="nav">
+      <div class="nav-left">
+        <span class="logo-symbol">
+
+    <svg width="30" height="30" viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg">
+    
+      <ellipse cx="18" cy="16" rx="9" ry="13"
+               transform="rotate(-18 18 16)"
+               fill="none" stroke="white" stroke-width="2.5" />
+      
+      <path d="M14 6c3 4 4.5 8.5 4.5 14"
+            fill="none" stroke="white" stroke-width="2.3"
+            stroke-linecap="round" />
+
+      
+      <ellipse cx="30" cy="16" rx="9" ry="13"
+               transform="rotate(18 30 16)"
+               fill="none" stroke="white" stroke-width="2.5" />
+    
+      <path d="M34 7c-3 4-4.5 8.5-4.5 14"
+            fill="none" stroke="white" stroke-width="2.3"
+            stroke-linecap="round" />
+    </svg>
+  </span>
+        <span class="logo-word">Café Website Demo </span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#story">About Us</a>
+        <a href="menu.html">Menu</a>
+        <a href="location.html">Location</a>
+        <a href="contact.html">Contact</a>
+        <a href="gallery.html">Watch Videos</a>
+      </nav>
+    </header>
+    <!-- Hero copy -->
+    <div class="hero-inner shell">
+      <div class="hero-text">
+        <h1>Where every cup tells a story.</h1>
+        <p>
+          Slow mornings, late-night study sessions, and mid-day catch-ups —
+          all fueled by small-batch coffee and cozy drinks at Birra’s Brew.
+        </p>
+        <a href="menu.html" class="hero-btn">Check our menu</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ============ STORY / FEATURE CARDS (2 photos) ============ -->
+    <section id="story" class="story">
+      <div class="shell">
+        <div class="story-grid">
+          <!-- Left image card -->
+          <article class="story-card image-card">
+            <img
+              src="https://i.pinimg.com/1200x/c4/4b/c4/c44bc46a95b977cc8cab1d1be9f4f409.jpg"
+              alt="Interior of Birra's Brew café"
+            />
+          </article>
+
+          <!-- Right card: photo on top + text below -->
+          <article class="story-card text-card">
+            <img
+              src="https://i.pinimg.com/1200x/b5/26/e4/b526e44216217e19f5683c76108c238e.jpg"
+              alt="Coffee being prepared at Birra's Brew"
+              class="text-card-img"
+            />
+            <div class="text-card-body">
+              <h2>A space brewed for community.</h2>
+              <p>
+               Café began as a tiny corner café with one simple idea:
+                make drinks that feel like a hug. From iced lattes and matcha to
+                seasonal specials, everything is crafted with care.
+              </p>
+              <p>
+                Our store is designed to feel warm, bright, and calm — the kind
+                of place you can bring your laptop, your best friend, or just
+                your thoughts.
+              </p>
+              <a href="about.html" class="secondary-btn">Learn more</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIAL STRIP ============ -->
+    <section class="testimonials">
+      <div class="testimonials-bg"></div>
+      <div class="testimonials-overlay"></div>
+
+      <div class="shell testimonials-inner">
+        <h3 class="testimonials-title">What our customers say</h3>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-name">Jessica M · ★★★★★</div>
+            <p>
+              “A hidden gem in the city. The vibes are cozy, the drinks are
+              beautiful, and the staff make you feel like a regular from day
+              one.”
+            </p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-name">Andre T · ★★★★★</div>
+            <p>
+              “Perfect spot to study and relax. The Strawberry Matcha is my
+              obsession — sweet, creamy, and not too heavy.”
+            </p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-name">Lina R · ★★★★★</div>
+            <p>
+              “Best iced lattes in town. The interior is so aesthetic that I
+              can’t stop taking pictures every time I go.”
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Café Website Demo · Crafted with care.</p>
+  </footer>
+
+</body>
+</html>
